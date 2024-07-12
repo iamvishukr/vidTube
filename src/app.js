@@ -18,4 +18,12 @@ app.use(express.static("public")) //will put files in public folder like favicon
 app.use(cookieParser()) // Extracts the cookie data from the HTTP request and converts it into a
                         // usable format that can be accessed by the server-side code
 
-export default app;
+
+//importing routes         
+import userRouter from './routes/user.routes.js'
+
+
+//routes declarations
+app.use("/api/v1/users", userRouter)
+
+export {app};
